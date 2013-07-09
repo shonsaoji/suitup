@@ -7,10 +7,11 @@ if [ ! -d "redis-2.4.18" ]; then
 
 	wget http://redis.googlecode.com/files/redis-2.4.18.tar.gz
 	tar xvzf redis-2.4.18.tar.gz
-	cd redis-2.4.18
 else
 	echo "Redis Package Found on the System"
 fi
+
+cd redis-2.4.18
 
 echo "Compiling..."
 make
