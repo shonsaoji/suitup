@@ -25,15 +25,13 @@ if [ ! -d "/etc/redis" ]; then
 	sudo mkdir /etc/redis
 fi
 
-if [ ! -d "/var/redis" ]; then
-	sudo mkdir /var/redis
-fi
-
 sudo cp utils/redis_init_script /etc/init.d/redis_6379
+sudo cp redis.conf /etc/redis/6379.conf
 
 if [ ! -d "/var/redis/6379"]; then
-	sudo mkdir /var/redis/6379
+	sudo mkdir -p /var/redis/6379
 fi
+
 
 sudo update-rc.d redis_6379 defaults
 
